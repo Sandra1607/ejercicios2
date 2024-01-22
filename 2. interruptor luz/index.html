@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>clases</title>
+  <style>   
+   .claro{background-color: white;color: black;}
+   .oscuro{background-color: black;color: white;}
+  </style>
+  <script>
+
+ window.onload = function() {
+    document.querySelector("p").onclick=function(){       
+    document.querySelector("p").classList.toggle("oscuro");     
+    document.body.classList.toggle("oscuro");
+
+    if(document.querySelector("p").classList=="claro oscuro"){
+    document.querySelector("p").innerHTML="OFF";
+    }else{
+      document.querySelector("p").innerHTML="ON";
+    }
+  }
+
+  
+  };
+ 
+
+
+
+  </script>
+</head>
+<body class="claro">
+  <p class="claro">ON</p>  
+
+</body>
+</html>

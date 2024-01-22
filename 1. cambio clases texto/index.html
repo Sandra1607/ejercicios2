@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>clases</title>
+  <style>
+    .clase1{color: red;}
+    .clase2{font-size: 25px;}
+    .clase3{color: green;}
+    .clase4{font-size: 40px;position: relative; left: 100px;}
+  </style>
+  <script>
+
+  // window.onload = function() {
+  //   document.querySelector("p").classList.add("clase3");
+  // }
+
+ window.onload = function() {
+    document.querySelector("p").onclick=function(){
+    document.querySelector("p").classList.add("clase3");
+    document.querySelector("p").classList.remove("clase2");
+    //toggle elimina la clase si esta y la añade si no está
+    document.querySelector("p").classList.toggle("clase4");
+    }
+    document.querySelector("div").onclick=function(){
+    clases=document.querySelector("p").classList;
+    document.querySelector("div").innerHTML="Clases: "+clases;
+    }
+  };
+ 
+
+
+
+  </script>
+</head>
+<body>
+  <p class="clase1 clase2">hola</p>  
+  <div> Clases:</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>Solo deja pulsar una vez </title>
+
+  <style>
+    #mielemento{
+      background-color: aqua;
+      width: 200px;
+      height: 100px;
+      margin: 30px;
+      padding: 30px;
+    }
+   
+  </style>
+
+  <script>
+
+// window.addEventListener("click",saludar);
+
+// function saludar(){
+//   alert("Hola! Soy un script en una hoja de estilo.");
+//   window.removeEventListener("click",saludar);
+// }
+
+//En este caso es necesario poner el window onload 
+window.onload = function(){
+  mielemento.addEventListener("click",saludar);
+}
+
+function saludar(){
+  alert("Hola! Soy un script en una hoja de estilo.");
+  mielemento.removeEventListener("click",saludar);
+}
+
+
+// window.onload = function(){
+//   mielemento.addEventListener("click",saludar);
+// }
+
+// function saludar(){
+//   otraFuncion(event);
+//   // event.preventDefault();
+//   alert("Hola! Soy un script en una hoja de estilo.");
+//   mielemento.removeEventListener("click",saludar);
+// }
+
+// function otraFuncion(e){
+//   e.preventDefault();
+// }
+  </script>
+
+</head>
+
+<body> 
+
+  <div id="mielemento"></div>
+
+</body>
+
+</html>

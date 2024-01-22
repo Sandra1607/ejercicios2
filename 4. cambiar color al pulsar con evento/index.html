@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>Solo deja pulsar una vez </title>
+
+  <style>
+    #mielemento , #mielemento2{
+      background-color: aqua;
+      width: 200px;
+      height: 100px;
+      margin: 30px;
+      padding: 30px;
+    }
+   
+  </style>
+
+  <script>
+
+window.onload = function(){
+  mielemento.addEventListener("click",color);
+  mielemento2.addEventListener("click",color);
+}
+
+function color(){
+  // document.getElementById("mielemento").style.background="red";
+  // De esta forma no hace falta que seleccione cada elemeto para cambiar de color, si no que va a cambiar todos en los que se produzac el evento
+  event.target.style.background="red";  
+  // this.style.background="red";  ES LO MISMO QUE LO DE ARRIBA
+}
+  </script>
+
+</head>
+
+<body> 
+
+  <div id="mielemento"></div>
+  <div id="mielemento2"></div>
+
+</body>
+
+</html>
