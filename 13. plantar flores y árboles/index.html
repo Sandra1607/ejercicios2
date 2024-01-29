@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>plantar en el prado</title>
+  <style>
+#prado{
+  background-color: rgb(57, 228, 57);
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+span{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+}
+  </style>
+  <script>
+window.onload=function(){
+  document.getElementById("prado").onclick=function(){
+    posx=event.offsetX;
+    posy=event.offsetY;
+    flor=document.createElement("span");
+    (Math.random()*2>1)?flor.innerHTML="🎄":flor.innerHTML="🌹";
+    // flor.innerHTML="❤";
+    document.getElementById("prado").appendChild(flor);
+    flor.style.top=posy+"px";
+    flor.style.left=posx+"px"; 
+  }
+
+}
+
+
+
+  </script>
+</head>
+<body>
+
+  <div id="prado"></div>
+
+
+</body>
+</html>
