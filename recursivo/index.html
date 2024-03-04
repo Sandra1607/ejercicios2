@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>EJERCICIO BASE EN UNA HOJA</title>
+  <style>
+
+  </style>
+  <script>
+var miArray=[["nombre", "zapato"],["precio","35"],["colores",["azul","marron","negro"]],["descripcion", "zapatos de deporte"]];
+miObjeto={uno:"lo que sea",dos:miArray,tres:"leches"};
+
+function recursiva(objeto){
+  datos=Object.keys(objeto)
+  datos.forEach(dato=> {
+    typeof objeto[dato]=="object"?(detalle.innerHTML+="<p><b>"+dato+"</b>:</p>", recursiva(objeto[dato])):detalle.innerHTML+="<p>"+dato+": "+objeto[dato]+"</p>";
+  });
+}
+window.onload=function(){
+  recursiva(miObjeto)
+}
+
+
+
+  </script>
+</head>
+<body>
+ <div id="detalle"></div>
+</body>
+</html>

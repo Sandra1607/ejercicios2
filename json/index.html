@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>Guardar alumno</title>
+  <style>
+
+  </style>
+  <script>
+
+    alumno={nombre:"Jacinto",apellido:"Perez",edad:"45",ciudad:"Madrid"}
+
+      window.onload=()=>{
+        if(sessionStorage.getItem("MiAlumnoAlmacenado2")){
+          // si existe quiero convertir el json en javascript
+          AlumnoRecuperado = JSON.parse(sessionStorage.getItem('MiAlumnoAlmacenado2'));
+          datos.innerHTML="Nombre: "+AlumnoRecuperado.nombre+" "+AlumnoRecuperado.apellido+" de "+AlumnoRecuperado.edad+ " años y de "+AlumnoRecuperado.ciudad;
+        }else{
+          // si no existe lo creamos
+          MiAlumnoJson=JSON.stringify(alumno);
+          sessionStorage.setItem( "MiAlumnoAlmacenado2", MiAlumnoJson)
+          datos.innerHTML="Alumno guardado";
+        }
+      }
+
+  </script>
+</head>
+<body>
+ <div id="datos"></div>
+</body>
+</html>

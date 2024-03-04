@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="shortcut icon" href="img/favicon.png" />
+  <script type="text/javascript" src="js/javascript.js" ></script>
+  <title>fectch</title>
+  <style>
+
+  </style>
+  <script>
+    // url="hfttp://randomuser.me/api/";
+    // fetch(url)
+    // .then(exito)
+    // .catch(error)
+    // .finally(siempre)
+
+    // // function exito(){
+    // //   alert("exitoooooo")
+    // // }
+    // function exito(respuesta){
+    //   alert(respuesta.status);
+    // }
+    // // function error(){
+    // //   alert("eroooor")
+    // // }
+    // function error(error){
+    //   alert(error.message);
+    // }
+
+
+   url="https://randomuser.me/api/";
+    fetch(url) 
+    .then(exito)
+    .catch(FuncionError)
+
+   
+    function exito(respuesta){
+      alert(respuesta.ok);
+      //ok devuelve true
+      //status devuelve 200 
+      respuesta.text().then(guardar);
+      //respuesta.text te devuelve el texto
+      //respuesta.json devuelve el objeto
+    }
+
+    function guardar(texto){
+      miObjeto=JSON.parse(texto);
+      // alert(miObjeto.results[0].name.first);
+      detalles.innerHTML+="<h1>"+miObjeto.results[0].name.first+ " "+miObjeto.results[0].name.last;
+      detalles.innerHTML+="<img src='"+miObjeto.results[0].picture.large+"'>";
+      detalles.innerHTML+="<p>Ciudad: "+miObjeto.results[0].location.city+"</p>";
+      detalles.innerHTML+="<p>Pais: "+miObjeto.results[0].location.country+"</p>";
+      detalles.innerHTML+="<p>Email: "+miObjeto.results[0].email +"</p>";
+      detalles.innerHTML+="<p>telefono: "+miObjeto.results[0].phone +"</p>";
+    }
+    
+    function FuncionError(error){
+      alert(error.message);
+    }
+
+
+
+
+  </script>
+</head>
+<body>
+ <div id="detalles"></div>
+</body>
+</html>
